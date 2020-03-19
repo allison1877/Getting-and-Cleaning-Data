@@ -66,4 +66,4 @@ datamelt <- melt(combineddata, id=c("activityid", "activity", "subject"))
 meansbygroup <- cast(datamelt, activityid + activity + subject ~ variable, mean, id.var = c("activityid", "activity", "subject"))
 
 # Save final tidy data file as a .txt - THIS IS A WIDE DATA FILE
-finaltidywide <- write.table(meansbygroup, file = "finaltidywide.txt", row.name = FALSE)
+finaltidywide <- write.table(meansbygroup, file = "finaltidywide.txt", sep = ',', row.name = FALSE)
